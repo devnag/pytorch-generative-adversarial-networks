@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Generative Adversarial Networks (GAN) example in PyTorch. 
+# Generative Adversarial Networks (GAN) example in PyTorch.
 # See related blog post at https://medium.com/@devnag/generative-adversarial-networks-gans-in-50-lines-of-code-pytorch-e81b79659e3f#.sch4xgsa9
 import numpy as np
 import torch
@@ -34,7 +34,7 @@ g_steps = 1
 #(name, preprocess, d_input_func) = ("Raw data", lambda data: data, lambda x: x)
 (name, preprocess, d_input_func) = ("Data and variances", lambda data: decorate_with_diffs(data, 2.0), lambda x: x * 2)
 
-print "Using data [%s]" % (name)
+print("Using data [%s]" % (name))
 
 # ##### DATA: Target data and generator input data
 
@@ -90,8 +90,8 @@ criterion = nn.BCELoss()  # Binary cross entropy: http://pytorch.org/docs/nn.htm
 d_optimizer = optim.Adam(D.parameters(), lr=d_learning_rate, betas=optim_betas)
 g_optimizer = optim.Adam(G.parameters(), lr=g_learning_rate, betas=optim_betas)
 
-for epoch in xrange(num_epochs):
-    for d_index in xrange(d_steps):
+for epoch in range(num_epochs):
+    for d_index in range(d_steps):
         # 1. Train D on real+fake
         D.zero_grad()
 
@@ -109,7 +109,7 @@ for epoch in xrange(num_epochs):
         d_fake_error.backward()
         d_optimizer.step()     # Only optimizes D's parameters; changes based on stored gradients from backward()
 
-    for g_index in xrange(g_steps):
+    for g_index in range(g_steps):
         # 2. Train G on D's response (but DO NOT train D on these labels)
         G.zero_grad()
 
