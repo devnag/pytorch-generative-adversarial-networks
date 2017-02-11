@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
-# Generative Adversarial Networks (GAN) example in PyTorch. See related blog post at https://medium.com/@devnag
+# Generative Adversarial Networks (GAN) example in PyTorch. 
+# See related blog post at https://medium.com/@devnag/generative-adversarial-networks-gans-in-50-lines-of-code-pytorch-e81b79659e3f#.sch4xgsa9
 import numpy as np
 import torch
 import torch.nn as nn
