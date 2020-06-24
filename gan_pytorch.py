@@ -78,7 +78,7 @@ def stats(d):
 
 def decorate_with_diffs(data, exponent):
     mean = torch.mean(data.data, 1)
-    mean_broadcast = torch.mul(torch.ones(data.size()), mean.tolist()[0][0])
+    mean_broadcast = torch.mul(torch.ones(data.size()), mean.tolist()[0])
     diffs = torch.pow(data - Variable(mean_broadcast), exponent)
     return torch.cat([data, diffs], 1)
 
